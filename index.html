@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=300;400;600;800&display=swap');
         
         :root { --gold: #fbbf24; --deep-slate: #020617; }
         
@@ -161,7 +160,8 @@
             </div>
         </div>
     </section>
-<section id="resources" class="py-24 px-6 bg-white/[0.02] border-t border-b border-white/5">
+
+    <section id="resources" class="py-24 px-6 bg-white/[0.02] border-t border-b border-white/5">
         <div class="max-w-7xl mx-auto text-center">
             <h2 class="text-[10px] font-black text-yellow-500 tracking-[0.5em] uppercase mb-4">Student Resources</h2>
             <p class="text-slate-400 text-sm max-w-xl mx-auto mb-12">Essential checklists and official documentation procedures to ease your transition to Germany.</p>
@@ -203,7 +203,7 @@
     </div>
 
     <script>
-  const resourceData = {
+        const resourceData = {
             aps: {
                 title: "Official APS Checklist",
                 type: "simple-list",
@@ -225,9 +225,8 @@
                 type: "categorized-list",
                 categories: [
                     {
-                        name: "Personal Documents, (  AAvsaram unnavi matramey tecchuko mama, nanu edho general ga pettina and enka emanna untey nek nacchinavi tecchuko )",
+                        name: "Personal Documents, ( AAvsaram unnavi matramey tecchuko mama, nanu edho general ga pettina and enka emanna untey nek nacchinavi tecchuko )",
                         items: [
-                        
                             "Valid Passport & National Visa (+ multiple physical copy sets)",
                             "Official Original APS Verification Certificate",
                             "University Admission Letter (Zulassungsbescheid) & Enrollment docs",
@@ -252,7 +251,7 @@
                     {
                         name: "Clothing & Footwear",
                         items: [
-                           "take only if you needed"
+                            "take only if you needed",
                             "2 Tailored Suits / Business Formal Outfits (For presentations & interviews)",
                             "2 Heavy Winter Jackets / Coats & Raincoat / Umbrella",
                             "High-quality Thermal Base Layers (Top & Bottom pairs)",
@@ -279,14 +278,13 @@
                     {
                         name: "Toiletries & Personal Care",
                         items: [
-                            "bring what is needed, not all"
+                            "bring what is needed, not all",
                             "Dedicated Toiletries Bag",
                             "Toothbrush, Toothpaste, Soap, Deodorant, Perfume",
                             "Shampoo, Hair Conditioner, Dandruff Shampoo",
                             "Face Lotion, Moisturizer, Face Cream, Lip Balm",
-                            "Nail Clippers/Cutter, Earbuds, Tissues"
+                            "Nail Clippers/Cutter, Earbuds, Tissues",
                             "soap holder"
-                            
                         ]
                     },
                     {
@@ -320,7 +318,7 @@
             }
         };
 
-      function openResourceModal(key) {
+        function openResourceModal(key) {
             const modal = document.getElementById('resourceModal');
             const titleEl = document.getElementById('modalTitle');
             const contentContainer = document.getElementById('modalCustomContent');
@@ -339,7 +337,6 @@
                     contentContainer.appendChild(ul);
                     
                 } else if (data.type === "categorized-list") {
-                    // Render beautiful point-by-point sections with clean categories for mobile screenshots
                     data.categories.forEach(cat => {
                         const catWrapper = document.createElement('div');
                         catWrapper.className = "mb-5 last:mb-0";
@@ -429,16 +426,14 @@
         </div>
     </section>
 
-
-    
-   <section id="community" class="py-24 px-6 bg-white/[0.01]">
+    <section id="community" class="py-24 px-6 bg-white/[0.01]">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
             
             <div class="lg:col-span-2 action-card bg-white p-10 rounded-[3rem] flex flex-col md:flex-row items-center gap-8 shadow-2xl !bg-white hover:transform-none">
                 <div class="flex-1 text-slate-900">
                     <div class="flex items-center gap-3 mb-4">
                         <div class="w-12 h-12 rounded-full border-2 border-yellow-500 overflow-hidden">
-                            <img src="WhatsApp Image 2025-06-14 at 13.02.17_b5323256.jpg" class="w-full h-full object-cover">
+                            <img src="WhatsApp Image 2025-06-14 at 13.02.17_b5323256.jpg" class="w-full h-full object-cover" alt="Profile">
                         </div>
                         <div>
                             <p class="font-black text-sm uppercase">RKR in Germany</p>
@@ -454,14 +449,14 @@
                         <p class="text-red-600 font-bold text-[10px] uppercase tracking-[0.2em]">Live Subscriber Count</p>
                     </div>
                     
-                    <h3 class="text-6xl font-black mb-1 tracking-tighter">1,2k</h3>
+                    <h3 class="text-6xl font-black mb-1 tracking-tighter">1.2k</h3>
                     <p class="text-slate-500 text-[10px] font-black uppercase tracking-widest mb-6">Real-time Community Growth</p>
                     
                     <a href="https://www.youtube.com/@rkr_in_germany?sub_confirmation=1" target="_blank" class="yt-red-btn w-full text-center py-4 rounded-xl font-black uppercase text-xs inline-block shadow-md">Subscribe</a>
                 </div>
 
                 <div class="hidden md:block w-48 h-48 rounded-full overflow-hidden border-4 border-slate-100 shrink-0">
-                    <img src="WhatsApp Image 2025-06-14 at 13.02.17_b5323256.jpg" class="w-full h-full object-cover">
+                    <img src="WhatsApp Image 2025-06-14 at 13.02.17_b5323256.jpg" class="w-full h-full object-cover" alt="RKR image">
                 </div>
             </div>
 
@@ -482,31 +477,26 @@
         </div>
     </section>
 
-  
     <section id="about" class="py-32 px-6">
-    <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-xs font-black text-yellow-500 tracking-[0.5em] uppercase mb-12">The Persona</h2>
-        <h3 class="text-3xl md:text-5xl font-extrabold mb-12 leading-tight">
-            "Motham easy ga aardham iyyela cheptha mama, everything you need about germany - <span class="opacity-50">student, work, ausbildung, visit etc.. ."</span>
-        </h3>
-        <div class="action-card p-10 rounded-[3rem] text-left text-slate-300 leading-relaxed border border-white/5">
-            <p class="mb-6 italic text-lg">
-                I am <span class="text-white font-bold uppercase">Rasakonda Raviteja</span>, a Master's student in <b>Data Science</b> at the <b></b> currently in the heart of Germany.
-            </p>
-            <p>
-                I provide the raw, unfiltered truth about moving abroad. No fluff, just results. Whether you're stuck on your SOP, need a roadmap for part-time jobs, or want to understand the admission process through a data-driven lens, I've got you covered.
-            </p>
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-xs font-black text-yellow-500 tracking-[0.5em] uppercase mb-12">The Persona</h2>
+            <h3 class="text-3xl md:text-5xl font-extrabold mb-12 leading-tight">
+                "Motham easy ga aardham iyyela cheptha mama, everything you need about germany - <span class="opacity-50">student, work, ausbildung, visit etc.. ."</span>
+            </h3>
+            <div class="action-card p-10 rounded-[3rem] text-left text-slate-300 leading-relaxed border border-white/5">
+                <p class="mb-6 italic text-lg">
+                    I am <span class="text-white font-bold uppercase">Rasakonda Raviteja</span>, a Master's student in <b>Data Science</b> at the <b>University of Europe for Applied Sciences</b> currently in the heart of Germany.
+                </p>
+                <p>
+                    I provide the raw, unfiltered truth about moving abroad. No fluff, just results. Whether you're stuck on your SOP, need a roadmap for part-time jobs, or want to understand the admission process through a data-driven lens, I've got you covered.
+                </p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <footer class="py-20 text-center border-t border-white/5 opacity-40 text-[10px] font-black uppercase tracking-[0.5em]">
         RKR IN GERMANY © 2026
     </footer>
-
-</body>
-</html>
-  
 
 </body>
 </html>
