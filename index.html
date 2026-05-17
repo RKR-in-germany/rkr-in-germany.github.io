@@ -203,7 +203,7 @@
     </div>
 
     <script>
-        const resourceData = {
+  const resourceData = {
             aps: {
                 title: "Official APS Checklist",
                 type: "simple-list",
@@ -222,15 +222,91 @@
             },
             shopping: {
                 title: "Pre-Departure Shopping List",
-                type: "simple-list",
-                items: [
-                    "Standard Indian Pressure Cooker + replacement safety valves & gaskets",
-                    "Essential Spices & Powders (Turmeric, Chilli powder, Sambhar, Garam masala)",
-                    "Tailored formal wear (1-2 clean professional sets for university/interviews)",
-                    "High-grade thermal base layers and heavy winter coats",
-                    "Universal travel adapter + multi-plug extended socket power strip",
-                    "Basic medical first-aid stocks (Paracetamol, cold relievers + doctor prescription)",
-                    "Compact highly absorbent microfiber towels and personal care kits"
+                type: "categorized-list",
+                categories: [
+                    {
+                        name: "Personal Documents",
+                        items: [
+                            "Valid Passport & National Visa (+ multiple physical copy sets)",
+                            "Official Original APS Verification Certificate",
+                            "University Admission Letter (Zulassungsbescheid) & Enrollment docs",
+                            "Proof of Language Proficiency & Exam score certificates",
+                            "Original Academic Transcripts & Degree Certificates",
+                            "Letters of Recommendation (LOR) & Birth Certificate",
+                            "Flight Tickets & Travel Insurance policy documents",
+                            "At least 15-20 Passport-sized biometric photographs",
+                            "Final year project report"
+                        ]
+                    },
+                    {
+                        name: "Electronics",
+                        items: [
+                            "Universal Travel Adapter (Crucial for German sockets)",
+                            "Heavy-duty Extension Box/Multi-plug Strip",
+                            "High-capacity Power Bank & essential USB/Charging Cables",
+                            "Laptop, Smartphone, Chargers & a high-speed Pen Drive",
+                            "All-in-1 Grooming Kit / Trimmer"
+                        ]
+                    },
+                    {
+                        name: "Clothing & Footwear",
+                        items: [
+                            "2 Tailored Suits / Business Formal Outfits (For presentations & interviews)",
+                            "2 Heavy Winter Jackets / Coats & Raincoat / Umbrella",
+                            "High-quality Thermal Base Layers (Top & Bottom pairs)",
+                            "Daily Wear / Casual Outfits & Traditional Dress for Festivals",
+                            "Track Pants, Nightwear, and plenty of Undergarments",
+                            "2 Pairs of Formal Shoes, 2 Pairs of Casual Sneakers, Slippers",
+                            "Winter Gloves, Beanies/Caps, Socks, Belts, and Ties",
+                            "Bath Towels, Hand Towels, and Handkerchiefs"
+                        ]
+                    },
+                    {
+                        name: "Kitchen, Utensils & Food",
+                        items: [
+                            "5L Pressure Cooker (Bring extra spare gaskets & safety valves!)",
+                            "Kadai / Frying Pan with Lid & a solid spatula (Salaki)",
+                            "Chapati Pan (Tawa) and Rolling Pin (Belan)",
+                            "Coffee/Milk Bowl with handle & 3 Good Kitchen Knives",
+                            "2 Plates, 2 Bowls, 2 Stainless Steel Glasses, 2 Spoons",
+                            "Durable Water Bottle & a compact Hand Mixer",
+                            "Spices (Min 100g each: Garam Masala, Kaaram, Pasupu, Elichi, Lavangam, Miryalu, Baghara Leaf, Biryani Set)",
+                            "1L Ghee, authentic home Pickles, Tea Powder, Maggi, Knorr Cup Soup"
+                        ]
+                    },
+                    {
+                        name: "Toiletries & Personal Care",
+                        items: [
+                            "Dedicated Toiletries Bag",
+                            "Toothbrush, Toothpaste, Soap, Deodorant, Perfume",
+                            "Shampoo, Hair Conditioner, Dandruff Shampoo",
+                            "Face Lotion, Moisturizer, Face Cream, Lip Balm",
+                            "Nail Clippers/Cutter, Earbuds, Tissues"
+                        ]
+                    },
+                    {
+                        name: "Medical Kit / Essentials",
+                        items: [
+                            "Fever & Pain Relievers (Paracetamol / Crocin)",
+                            "Cold, Cough, and Sore Throat lozenges / tablets",
+                            "Vomiting, Motion Sickness, and Gas/Acidity tablets",
+                            "Stomach Pain & Digestion problem tablets",
+                            "Amoxicillin (Broad-spectrum antibiotic - keep original doctor prescription!)",
+                            "Vitamins & Supplements (Limcee Vitamin C, Evion 400 Vitamin E, Omega-3 Softgels, Iron, Zinc, Hair Biotin/Vb7)",
+                            "Moov / Iodex pain relief ointment",
+                            "First-Aid items: Bandages, Medical Tape, Cotton rolls, etc."
+                        ]
+                    },
+                    {
+                        name: "Miscellaneous & Finance",
+                        items: [
+                            "Cash: Exactly 1000 Euros in cash (Mix of 10, 20, 50 Euro notes; avoid 100/200/500 bills)",
+                            "Stationery: Notebooks, Pens, Highlighters, Document Folder files",
+                            "Sunglasses & 1 compact Travel Sleeping Bag",
+                            "2 Durable Bedsheets and Pillows/Pillowcases",
+                            "Purse or Wallet, Face Masks, and Hand Sanitizer"
+                        ]
+                    }
                 ]
             },
             visa: {
@@ -239,7 +315,7 @@
             }
         };
 
-        function openResourceModal(key) {
+      function openResourceModal(key) {
             const modal = document.getElementById('resourceModal');
             const titleEl = document.getElementById('modalTitle');
             const contentContainer = document.getElementById('modalCustomContent');
@@ -250,7 +326,6 @@
                 contentContainer.innerHTML = '';
                 
                 if (data.type === "simple-list") {
-                    // Clean point-by-point layout tailored purely for phone screen captures
                     const ul = document.createElement('ul');
                     ul.className = "space-y-2 text-slate-300 text-xs font-medium list-none pl-0";
                     data.items.forEach(item => {
@@ -258,8 +333,25 @@
                     });
                     contentContainer.appendChild(ul);
                     
+                } else if (data.type === "categorized-list") {
+                    // Render beautiful point-by-point sections with clean categories for mobile screenshots
+                    data.categories.forEach(cat => {
+                        const catWrapper = document.createElement('div');
+                        catWrapper.className = "mb-5 last:mb-0";
+                        
+                        let catHTML = `<h4 class="text-[11px] font-black text-yellow-500 uppercase tracking-wider mb-2 border-l-2 border-yellow-500 pl-2 bg-white/[0.01] py-1">${cat.name}</h4>`;
+                        catHTML += `<ul class="space-y-1 text-slate-300 text-xs font-medium list-none pl-0">`;
+                        
+                        cat.items.forEach(item => {
+                            catHTML += `<li class="flex items-start gap-2 py-1 border-b border-white/[0.02]"><span class="text-yellow-500/60 font-bold shrink-0">-</span><span class="leading-relaxed">${item}</span></li>`;
+                        });
+                        
+                        catHTML += `</ul>`;
+                        catWrapper.innerHTML = catHTML;
+                        contentContainer.appendChild(catWrapper);
+                    });
+                    
                 } else if (data.type === "visa-composite") {
-                    // Injecting the absolute pipeline graphic + official document data + strict restrictions
                     contentContainer.innerHTML = `
                         <div class="mb-6">
                             <h4 class="text-[10px] font-black text-yellow-500 uppercase tracking-widest mb-4">Consular Services Portal Process</h4>
